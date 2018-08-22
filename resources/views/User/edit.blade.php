@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('home',he(Auth::user()->id)) }}"> Back</a>
+                <a class="btn btn-primary" href="{{ URL::previous() }}"> Back</a>
             </div>
         </div>
     </div>

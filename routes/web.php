@@ -18,5 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('Users','UsersController');
+Route::resource('Consultants','ConsultantsController');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('photo/{name}','HomeController@profileImage')->name('profileImage');
+Route::get('Users/{id}/image/{name}','HomeController@updateimg')->name('updateimg');
+Route::post('Users/{id}/image/{id2}','HomeController@updateimg')->name('updateimg');

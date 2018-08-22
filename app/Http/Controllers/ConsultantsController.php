@@ -55,9 +55,11 @@ class ConsultantsController extends Controller
      * @param  \App\Consultants  $consultants
      * @return \Illuminate\Http\Response
      */
-    public function edit(Consultants $consultants)
+    public function edit($id)
     {
-        //
+        $id1 = hd($id);
+        // return $id1;
+        return view('User.create2',compact('id1'));
     }
 
     /**

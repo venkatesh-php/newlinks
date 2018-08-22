@@ -64,13 +64,13 @@
                         &nbsp;
                         @if(Auth::check())
                         @if(Auth::user()->id == 1 && Auth::user()->gender == 'male')
-                        <li><a href=""><h4 style='color:white'>All Users</h4></a></li>
+                        <li><a href="{{ route('Users.index') }}"><h4 style='color:white'><b>All Users</b></h4></a></li>
                         
                         @else
                             @if(Auth::user()->gender == 'male')
-                            <li><a href=""><h4 style='color:white'>Bride</h4></a></li>
+                            <li><a href=""><h4 style='color:white'><b>Bride</b></h4></a></li>
                             @else
-                            <li><a href=""><h4 style='color:white'>Groom</h4></a></li>
+                            <li><a href=""><h4 style='color:white'><b>Groom</b></h4></a></li>
                             @endif
                         @endif
                         @endif
@@ -86,7 +86,7 @@
                             
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                    {{ Auth::user()->fullname }} <span class="caret"></span>
+                                <h4 style='color:white'>{{ Auth::user()->fullname }}</h4> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">

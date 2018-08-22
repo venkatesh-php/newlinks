@@ -6,6 +6,17 @@
     font-family: "Times New Roman", Times, serif;
    }
 </style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ URL::previous() }}"> Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -25,9 +36,11 @@
                                     @endif
                                     
                                     <div class="row">
-                                        @if($users->id == Auth::user()->id)
-                                            <a class="btn btn-primary btn-xs" href="{{ route('Users.create') }}"> Update </a>
-                                        @endif
+                                    @if(Auth::user()->id == $users->id)
+                                        <a class="btn btn-primary btn-xs" href="{{ route('Users.create') }}"> Update </a>
+                                    @else  
+                                        <a class="btn btn-primary btn-xs" href="{{ route('Consultants.edit',he($users->id)) }}"> Update </a>
+                                    @endif
                                     </div> 
                                 </div>
                                 <div class="col-lg-6 col-xs-12 col-md-6 col-lg-6">
@@ -110,11 +123,9 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-10">
-                                            @if($users->id == Auth::user()->id)
                                             <div class="pull-right">
                                                 <a class="btn btn-primary" href="{{ route('Users.edit',he($users->id)) }}"> Edit Profile</a>
-                                            </div>
-                                            @endif
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>
