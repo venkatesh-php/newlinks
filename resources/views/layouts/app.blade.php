@@ -85,7 +85,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}"><h4 style='color:white'><b>Login</b></h4></a></li>
-                            <!-- <li><a href="{{ route('register') }}"><h4 style='color:white'><b>Register</b></h4></a></li> -->
+                            <li><a href="{{ route('register') }}"><h4 style='color:white'><b>Register</b></h4></a></li>
                         @else
                             
                             <li class="dropdown">
