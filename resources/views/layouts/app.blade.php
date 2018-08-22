@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'NewLinks') }}</title>
+    <title>{{ config('app.name', 'SivaLinks') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,10 +28,13 @@
     font-family: "Times New Roman", Times, serif;
 
     }
+    body {
+
+    }
 
     </style>
 </head>
-<body>
+<body background="background.jpg">
     <div id="app">
 
      <nav class="navbar transparent">
@@ -51,7 +54,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        <h4><b>{{ config('app.name', 'NewLinks') }}</b></h4>
+                        <h4><b style='color:white'>{{ config('app.name', 'SivaLinks') }}</b></h4>
                     </a>
                 </div>
 
@@ -61,14 +64,13 @@
                         &nbsp;
                         @if(Auth::check())
                         @if(Auth::user()->id == 1 && Auth::user()->gender == 'male')
-                        <!-- <li><a href="">Home</a></li> -->
-                        <li><a href=""><h4>Bride</h4></a></li>
-                        <li><a href=""><h4>Groom</h4></a></li>
+                        <li><a href=""><h4 style='color:white'>All Users</h4></a></li>
+                        
                         @else
                             @if(Auth::user()->gender == 'male')
-                            <li><a href=""><h4>Bride</h4></a></li>
+                            <li><a href=""><h4 style='color:white'>Bride</h4></a></li>
                             @else
-                            <li><a href=""><h4>Groom</h4></a></li>
+                            <li><a href=""><h4 style='color:white'>Groom</h4></a></li>
                             @endif
                         @endif
                         @endif
@@ -78,8 +80,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}"><h4>Login</h4></a></li>
-                            <li><a href="{{ route('register') }}"><h4>Register</h4></a></li>
+                            <li><a href="{{ route('login') }}"><h4 style='color:white'><b>Login</b></h4></a></li>
+                            <!-- <li><a href="{{ route('register') }}"><h4 style='color:white'><b>Register</b></h4></a></li> -->
                         @else
                             
                             <li class="dropdown">

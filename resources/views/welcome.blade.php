@@ -1,85 +1,64 @@
 @extends('layouts.app')
 @section('content')
-
-
-<div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <center>
-                        <div class="title">                        
-                            <h1 style="color:block">NewLinks Matrimonial consultancy Services </h1>
-                        </div>     
-                </center>
-            </div>
-        </div>
-    </div>
-
-
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-primary">
-                <div class="panel-heading"><center><h2>NewLinks Login</h2></center></div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail /Phone Number</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="text" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <!-- <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a> -->
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="col-md-10 col-md-offset-1">
+            <center>
+                    <div class="title">                        
+                        <h1 style='color:white'>Welcome to SivaLinks Matrimonial Consultancy Services </h1>
+                    </div>     
+            </center>
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="title">                        
+                <h2 style='color:white'><u>Registration Instructions </u></h2>
+            </div>  
+            <h3 style='color:white'>1.Registration Fee : 1000/-.</h3>
+            <h3 style='color:white'>2.You need to send the money First.</h3>
+            <h3 style='color:white'>3.After you'll get Login Credentials.</h3>
+            <h3 style='color:white'>4.You'll get unlimited access of all matches.</h3>
+            <h3 style='color:white'>5.First of all you need to contact Consultant Person</h3>
+            <h3 style='color:white'>6.Account NO:20158838136, Jonnalagadda</h3>
+            <h3 style='color:white'>7.IFSC Code : SBIN0001924.</h3>
+            <h3 style='color:white'>8.Name : Venkateswarlu</h3>
+            <h3 style='color:white'>9.WhatsApp NO : 9848041175</h3>
+
+               
+        </div>
+
+        <div class="col-md-6">
+            <div class="title">                        
+                <h2 style='color:white'><u>List of Consultant Persons </u></h2>
+            </div>  
+            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                            
+                                <?php 
+                                use Illuminate\Http\Request;
+                                use App\Http\Requests;
+                                $consultants = DB::table("consultants")->get();
+                                $i =1;
+                                ?>
+                                
+                            <div class="col-md-12">
+                                  
+                                @foreach($consultants as $consultant)
+                                <h3 style='color:white'>{{$i++}} . {{$consultant->name}} : {{$consultant->phone_number}} {{$consultant->address}} </h3>
+                                @endforeach
+                                
+                            </div>
+                        </div>
+
+               
+        </div>
+    </div>
+</div>
+
+
 
                
            

@@ -8,7 +8,7 @@
 
                     <!-- <br> -->
                         <div class="title">                        
-                            <h1 style="color:block">NewLinks Matrimonial consultancy Services </h1>
+                            <h1 style="color:block">SivaLinks Matrimonial consultancy Services </h1>
                         </div>     
                     <!-- <br>                   -->
 
@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
-                <div class="panel-heading"><center><h2>NewLinks Login</h2></center></div>
+                <div class="panel-heading"><center><h2>SivaLinks Login</h2></center></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
@@ -63,7 +63,7 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
