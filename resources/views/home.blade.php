@@ -75,10 +75,10 @@
                                             <th>Salary</th><td>{{ $users->salary }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Religion</th><td>{{ $users->religion }}</td>
+                                            <th>Religion</th><td>{{ $users->creligion }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Caste</th><td>{{ $users->caste }}</td>
+                                            <th>Caste</th><td>{{ $users->ccaste }}</td>
                                         </tr>
                                         <tr>
                                             <th>Sub Caste</th><td>{{ $users->sub_caste }}</td>

@@ -127,16 +127,37 @@
     <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
             <strong>Religion  :</strong>
-            {!! Form::text('religion', null, array('placeholder' => 'Enter your Religion','class' => 'form-control')) !!}
+            <!-- {!! Form::text('religion', null, array('placeholder' => 'Enter your Religion','class' => 'form-control')) !!} -->
+            <?php 
+                use Illuminate\Http\Request;
+                use App\Http\Requests;
+                $religions = DB::table("religions")->get();
+            ?>
+            <select name="religion" id='religion' class="form-control" value="">
+                <option value="" disabled="disabled" selected="selected">Select</option>  
+                @foreach($religions as $religion)
+                <option value="{{$religion->id}}">{{$religion->name}}</option> 
+                @endforeach
+            </select>
         </div>
     </div>
 
 
-    
+   
+
     <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
             <strong>Caste  :</strong>
-            {!! Form::text('caste', null, array('placeholder' => 'Enter your Caste','class' => 'form-control')) !!}
+            <!-- {!! Form::text('caste', null, array('placeholder' => 'Enter your Caste','class' => 'form-control')) !!} -->
+            <?php 
+                $castes = DB::table("castes")->get();
+            ?>
+            <select name="caste" id='caste' class="form-control" value="">
+                <option value="" disabled="disabled" selected="selected">Select</option>  
+                @foreach($castes as $caste)
+                <option value="{{$caste->id}}">{{$caste->name}}</option> 
+                @endforeach
+            </select>
         </div>
     </div>
     <div class="col-xs-6 col-sm-6 col-md-6">

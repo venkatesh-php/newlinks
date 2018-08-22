@@ -31,14 +31,33 @@ class HomeController extends Controller
     {
         $users = User::find(Auth::user()->id);
         $consultants = DB::table('consultants')->where('consultants.id',$users->consultant_id)->get();
+        $religions = DB::table('religions')->where('religions.id',$users->religion)->get();
+        $castes = DB::table('castes')->where('castes.id',$users->caste)->get();
+
         foreach ($consultants as $consultant)
         {
             if($users->consultant_id == $consultant->id)
-        {
-            $users->cname = $consultant->name;
-            $users->cnumber = $consultant->phone_number;
-            $users->caddress = $consultant->address;
+            {
+                $users->cname = $consultant->name;
+                $users->cnumber = $consultant->phone_number;
+                $users->caddress = $consultant->address;
+            }
+
         }
+        foreach ($religions as $religion)
+        {
+            if($users->religion == $religion->id)
+            {
+                $users->creligion = $religion->name;
+            }
+
+        }
+        foreach ($castes as $caste)
+        {
+            if($users->caste == $caste->id)
+            {
+                $users->ccaste = $caste->name;
+            }
 
         }
         
