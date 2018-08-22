@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Consultants;
+use DB;
+use Auth;
+use App\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class ConsultantsController extends Controller
 {
@@ -12,9 +17,79 @@ class ConsultantsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if(Auth::user()->payment == 0)
+        {
+            return redirect()->back()->with('alert','Please make the payment to see Matches');
+        }
+        else{
+
+        
+        if(Auth::user()->gender == 'male')
+        {
+            $users = Users::orderBy('id','DESC')
+            ->where('users.caste',Auth::user()->caste)
+            ->where('users.gender','female') 
+            ->paginate(1);
+        }
+        else
+        {
+            $users = Users::orderBy('id','DESC')
+            ->where('users.caste',Auth::user()->caste)
+            ->where('users.gender','male') 
+            ->paginate(1);
+
+        }
+
+        $consultants = DB::table('consultants')->get();
+        $religions = DB::table('religions')->get();
+        $castes = DB::table('castes')->get();
+
+        // return $castes;
+
+        foreach ($users as $user)
+        {
+            foreach ($consultants as $consultant)
+            {
+                if($user->consultant_id == $consultant->id)
+                {
+                    $user->cname = $consultant->name;
+                    $user->cnumber = $consultant->phone_number;
+                    $user->caddress = $consultant->address;
+                }
+            }
+        }
+        foreach ($religions as $religion)
+        {
+            foreach ($users as $user)
+            {
+            if($user->religion == $religion->id)
+            {
+                $user->creligion = $religion->name;
+            }
+        }
+
+        }
+        foreach ($castes as $caste)
+        {
+            foreach ($users as $user)
+            {
+            if($user->caste == $caste->id)
+            {
+                $user->ccaste = $caste->name;
+            }
+        }
+
+        }
+
+        
+        
+
+        return view('User.index2',compact('users'))
+            ->with('i', ($request->input('page', 1) - 1) * 1);
+
+    }
     }
 
     /**

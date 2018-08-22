@@ -68,12 +68,16 @@
                         
                         @else
                             @if(Auth::user()->gender == 'male')
-                            <li><a href=""><h4 style='color:white'><b>Bride</b></h4></a></li>
+                            <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Bride Matches</b></h4></a></li>
+                           
                             @else
-                            <li><a href=""><h4 style='color:white'><b>Groom</b></h4></a></li>
+                            <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Groom Matches</b></h4></a></li>
+                            
                             @endif
                         @endif
+                        <li><a><h4 style='color:white'><b>Your ID : {{Auth::user()->id}} </b></h4></a></li>
                         @endif
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -111,8 +115,7 @@
             </div>
             </div>
         </nav>
-        <br><br>
-
+        <!-- <br><br> -->
         @yield('content')
     </div>
 

@@ -6,6 +6,12 @@
     font-family: "Times New Roman", Times, serif;
    }
 </style>
+@if ($message = Session::get('alert'))
+    <div class="alert alert-danger">
+        <h2>{{ $message }}</h2>
+    </div>
+@endif
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
