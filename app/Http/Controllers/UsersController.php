@@ -158,7 +158,7 @@ class UsersController extends Controller
             'gender' => '',
             'qualification' => '',
             'job' => '',
-            'job-location' => '',
+            'job_location' => '',
             'salary' => '',
             'religion' => '',
             'caste' => '',
@@ -176,7 +176,7 @@ class UsersController extends Controller
         User::find($id1)->update($request->all());
         if(Auth::user()->id == $id1)
         {
-            return redirect()->route('home',compact('id'))
+            return redirect()->route('home')
             ->with('success','Profile updated successfully');
         }
         else{
@@ -195,5 +195,15 @@ class UsersController extends Controller
     public function destroy(Users $users)
     {
         //
+    }
+
+    public function getCasteList(Request $request)
+    {
+        // return $request->id;
+        $caste = DB::table("castes")
+                    ->where("religion_id",$request->id)
+                    ->get();
+        return $caste;
+        
     }
 }

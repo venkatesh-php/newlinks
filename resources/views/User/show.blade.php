@@ -1,12 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<style>
-.td {
-       
-    font-family: "Times New Roman", Times, serif;
-   }
-</style>
-
 <div class="container">
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -28,20 +21,20 @@
                         <div class="row">
                             <div class="col-md-10">    
                                 <div class="col-lg-6 col-xs-12 col-md-6 col-lg-6">
-                                <div oncontextmenu="return false;">
-                                    @if($users->photo == Null)
-                                    <img src="{{route('profileImage',['name'=>'dummy_pic.jpg'])}}" alt="" class="img-thumbnail" height="350" width="350">   
-                                    @else
-                                    <img src="{{route('profileImage',['name'=>$users->photo])}}" alt="" class="img-thumbnail" height="350" width="350">
-                                    @
+                                    <div oncontextmenu="return false;">
+                                        @if($users->photo == Null)
+                                        <img src="{{route('profileImage',['name'=>'dummy_pic.jpg'])}}" alt="" class="img-thumbnail" height="350" width="350">   
+                                        @else
+                                        <img src="{{route('profileImage',['name'=>$users->photo])}}" alt="" class="img-thumbnail" height="350" width="350">
+                                        @endif
                                     </div>
                                     
                                     <div class="row">
-                                    @if(Auth::user()->id == $users->id)
-                                        <a class="btn btn-primary btn-xs" href="{{ route('Users.create') }}"> Update </a>
-                                    @else  
-                                        <a class="btn btn-primary btn-xs" href="{{ route('Consultants.edit',he($users->id)) }}"> Update </a>
-                                    @endif
+                                        @if(Auth::user()->id == $users->id)
+                                            <a class="btn btn-primary btn-xs" href="{{ route('Users.create') }}"> Update </a>
+                                        @else  
+                                            <a class="btn btn-primary btn-xs" href="{{ route('Consultants.edit',he($users->id)) }}"> Update </a>
+                                        @endif
                                     </div> 
                                 </div>
                                 <div class="col-lg-6 col-xs-12 col-md-6 col-lg-6">

@@ -123,43 +123,6 @@
     </div>
 
 
-
-    <div class="col-xs-6 col-sm-6 col-md-6">
-        <div class="form-group">
-            <strong>Religion  :</strong>
-            <!-- {!! Form::text('religion', null, array('placeholder' => 'Enter your Religion','class' => 'form-control')) !!} -->
-            <?php 
-                use Illuminate\Http\Request;
-                use App\Http\Requests;
-                $religions = DB::table("religions")->get();
-            ?>
-            <select name="religion" id='religion' class="form-control" value="">
-                <option value="" disabled="disabled" selected="selected">Select</option>  
-                @foreach($religions as $religion)
-                <option value="{{$religion->id}}">{{$religion->name}}</option> 
-                @endforeach
-            </select>
-        </div>
-    </div>
-
-
-   
-
-    <div class="col-xs-6 col-sm-6 col-md-6">
-        <div class="form-group">
-            <strong>Caste  :</strong>
-            <!-- {!! Form::text('caste', null, array('placeholder' => 'Enter your Caste','class' => 'form-control')) !!} -->
-            <?php 
-                $castes = DB::table("castes")->get();
-            ?>
-            <select name="caste" id='caste' class="form-control" value="">
-                <option value="" disabled="disabled" selected="selected">Select</option>  
-                @foreach($castes as $caste)
-                <option value="{{$caste->id}}">{{$caste->name}}</option> 
-                @endforeach
-            </select>
-        </div>
-    </div>
     <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
             <strong>Sub Caste  :</strong>
@@ -199,6 +162,20 @@
             {!! Form::text('permanent_address', null, array('placeholder' => 'Enter Permanant Address','class' => 'form-control')) !!}
         </div>
     </div>
+    @if(Auth::user()->id == 1)
+    <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="form-group">
+            <strong>Marraige Status:</strong>
+            {!! Form::number('status','value') !!}
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="form-group">
+            <strong>Payment Status:</strong>
+            {!! Form::number('payment', 'value') !!}
+        </div>
+    </div>
+    @endif
 
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Submit</button>

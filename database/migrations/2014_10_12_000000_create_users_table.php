@@ -40,8 +40,8 @@ class CreateUsersTable extends Migration
             $table->longText('remarks')->nullable();
             $table->longText('description')->nullable();
             $table->integer('consultant_id');
-            $table->integer('status')->default('0');
-            $table->integer('payment')->default('0');
+            $table->integer('status')->nullable();
+            $table->integer('payment')->nullable();
 
             
 

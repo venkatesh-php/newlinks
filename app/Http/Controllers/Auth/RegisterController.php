@@ -53,6 +53,8 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'phone_number' => 'required|unique:users',
             'gender' => 'required',
+            'religion' => 'required',
+            'caste' => 'required',
             'consultant_id' => 'required',
         ]);
     }
@@ -71,6 +73,8 @@ class RegisterController extends Controller
             'password' =>  bcrypt($data['password']),
             'phone_number' => $data['phone_number'],
             'gender' => $data['gender'],
+            'religion' => $data['religion'],
+            'caste' => $data['caste'],
             'consultant_id' => $data['consultant_id'],
             
         ]);

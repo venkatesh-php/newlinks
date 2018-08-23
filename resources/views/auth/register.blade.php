@@ -90,6 +90,30 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('religion') ? ' has-error' : '' }}">
+                            <label for="country" class="col-md-4 control-label"> Religion</label>
+                                <?php 
+                                    $religions = DB::table("religions")->get();
+                                ?>   
+                            <div class="col-md-6">
+                                <select name="religion" id='religion' class="form-control" value="">
+                                    <option value="" disabled="disabled" selected="selected">Select</option>  
+                                @foreach($religions as $religion)
+                                <option value="{{$religion->id}}">{{$religion->name}} </option> 
+                                @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('caste') ? ' has-error' : '' }}">
+                            <label for="caste" class="col-md-4 control-label">Caste</label>
+                            <div class="col-md-6">
+                                <select name="caste" id="caste" class="form-control">
+                              
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                             <label for="consultant_id" class="col-md-4 control-label"> Consultant</label>
                                 <?php 
@@ -130,4 +154,42 @@
         </div>
     </div>
 </div>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#religion').change(function(){
+    var religionID = $(this).val(); 
+    // console.log(religionID);
+
+    if(religionID){
+        $.ajax({
+            
+           type:"GET",
+           url:"{{url('/get_caste_list')}}/"+religionID,  
+
+           success:function(data){  
+            // console.log(data);
+                    
+            if(data){
+                $("#caste").empty();
+                $("#caste").append('<option>Select</option>');
+                
+                $.each(data,function(key,value){
+                    $("#caste").append('<option value="'+value.id+'">'+value.name+'</option>');
+                  
+                });
+                
+           
+            }else{
+               $("#caste").empty();
+            }
+           }
+        });
+    }else{
+        $("#caste").empty();
+        
+    }      
+   });
+});
+</script>
 @endsection

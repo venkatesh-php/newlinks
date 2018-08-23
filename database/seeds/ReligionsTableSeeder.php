@@ -13,7 +13,9 @@ class ReligionsTableSeeder extends Seeder
     {
         DB::table('religions')->delete();
         $religions = array(
-            array('id' => 1,'name' => 'Hindu'),
+            array('id' => 1,'name' => 'Hindus'),
+            array('id' => 2,'name' => 'Muslims'),
+            array('id' => 3,'name' => 'Christians'),
         );
         DB::table('religions')->insert($religions);
         

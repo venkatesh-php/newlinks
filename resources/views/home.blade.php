@@ -67,7 +67,7 @@
                                             <th>Email</th><td>{{ $users->email  }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Ph Number</th><td>{{ $users->phone_number  }}</td>
+                                            <th>Phone Number</th><td>{{ $users->phone_number  }}</td>
                                         </tr>
                                         <tr>
                                             <th>Qualification</th><td>{{ $users->qualification  }}</td>
@@ -94,10 +94,6 @@
                                             <th>Gothram</th><td>{{ $users->gothram }}</td>
                                         </tr>
                                         <tr>
-                                            <th>Remarks</th><td>{{ $users->remarks }}</td>
-                                        </tr>
-                                        
-                                        <tr>
                                             <th>Present Address</th><td>{{ $users->present_address }}</td>
                                         </tr>
                                         <tr>
@@ -107,8 +103,12 @@
                                             <th>Describe Yourself</th><td>{{ $users->description }}</td>
                                         </tr>
                                         <tr>
+                                            <th>Remarks</th><td>{{ $users->remarks }}</td>
+                                        </tr>
+                                        <tr>
                                             <th>Consultant Person</th><td>{{ $users->cname }}-{{ $users->cnumber }}</td>
                                         </tr>
+                                       
                                         
                                         </table>
                                     </div>
