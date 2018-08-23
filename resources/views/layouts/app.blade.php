@@ -108,7 +108,8 @@
                             
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                <h4 style='color:white'>{{ Auth::user()->fullname }}</h4> <span class="caret"></span>
+                                <h4 style='color:white'>{{ Auth::user()->fullname }}</h4> 
+                                
                                 </a>
 
                                 <ul class="dropdown-menu">
@@ -124,6 +125,17 @@
                                         </form>
                                     </li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                <h4 style='color:white'>Logout</h4>
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
                             </li>
                         @endguest
                     </ul>

@@ -5,7 +5,7 @@
         <div class="col-md-10 col-md-offset-1">
             <center>
                     <div class="title">                        
-                        <h1 style='color:white'>Welcome to SivaLinks Matrimonial Consultancy Services </h1>
+                        <h1 style='color:black'>Welcome to SivaLinks Matrimonial Consultancy Services </h1>
                     </div>     
             </center>
         </div>
