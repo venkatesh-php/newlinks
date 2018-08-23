@@ -18,11 +18,11 @@
             <div class="title">                        
                 <h2 style='color:white'><u>Registration Instructions </u></h2>
             </div>  
-            <h3 style='color:white'>1.Registration Fee : 1000/-.</h3>
-            <h3 style='color:white'>2.You need to send the money First.</h3>
-            <h3 style='color:white'>3.After you'll get Login Credentials.</h3>
+            <h3 style='color:white'>1.Registration Free</h3>
+            <h3 style='color:white'>2.You'll visible to all Sutable Matches</h3>
+            <h3 style='color:white'>3.If you wanna see other matches,Need to make payment.</h3>
             <h3 style='color:white'>4.You'll get unlimited access of all matches.</h3>
-            <h3 style='color:white'>5.First of all you need to contact Consultant Person</h3>
+            <h3 style='color:white'>5.Unlimited Access Fee : 1000/-</h3>
             <h3 style='color:white'>6.Account NO:20158838136, Jonnalagadda</h3>
             <h3 style='color:white'>7.IFSC Code : SBIN0001924.</h3>
             <h3 style='color:white'>8.Name : Venkateswarlu</h3>

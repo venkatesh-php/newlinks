@@ -24,12 +24,13 @@
                             <div class="col-md-10">    
                                 <div class="col-lg-6 col-xs-12 col-md-6 col-lg-6">
                                         
+                                <div oncontextmenu="return false;">
                                     @if($users->photo == Null)
                                     <img src="{{route('profileImage',['name'=>'dummy_pic.jpg'])}}" alt="" class="img-thumbnail" height="350" width="350">   
                                     @else
                                     <img src="{{route('profileImage',['name'=>$users->photo])}}" alt="" class="img-thumbnail" height="350" width="350">
                                     @endif
-                                    
+                                    </div>
                                     <div class="row">
                                         @if($users->id == Auth::user()->id)
                                             <a class="btn btn-primary btn-xs" href="{{ route('Users.create') }}"> Update </a>

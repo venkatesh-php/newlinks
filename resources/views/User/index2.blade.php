@@ -22,12 +22,13 @@
                         @foreach ($users as $key => $user)
                             <div class="col-md-10">    
                                 <div class="col-lg-6 col-xs-12 col-md-6 col-lg-6">
-                                        
+                                <div oncontextmenu="return false;">   
                                     @if($user->photo == Null)
                                     <img src="{{route('profileImage',['name'=>'dummy_pic.jpg'])}}" alt="" class="img-thumbnail" height="350" width="350">   
                                     @else
                                     <img src="{{route('profileImage',['name'=>$user->photo])}}" alt="" class="img-thumbnail" height="350" width="350">
                                     @endif
+                                    </div>
                                     <h4 style='color:block'><b>Match ID : {{$user->id}} </b></h4>
              
                                 </div>

@@ -8,7 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SivaLinks') }}</title>
+    <title>SivaLinks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -31,10 +34,18 @@
     body {
 
     }
-
     </style>
+    <script language="JavaScript">
+     window.onload = function() {
+    document.addEventListener("contextmenu", function(e){
+      e.preventDefault();
+    }, false);
+
+    </script>
+
 </head>
 <body background="background.jpg">
+
     <div id="app">
 
      <nav class="navbar transparent">
@@ -53,9 +64,16 @@
                     </button>
 
                     <!-- Branding Image -->
+                    @if(Auth::check())
                     <a class="navbar-brand" href="{{ url('/home') }}">
-                        <h4><b style='color:white'>{{ config('app.name', 'SivaLinks') }}</b></h4>
+                        <h4><b style='color:white'>SivaLinks</b></h4>
                     </a>
+                    @else
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        <h4><b style='color:white'>SivaLinks</b></h4>
+                    </a>
+                    @endif
+
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
