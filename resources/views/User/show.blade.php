@@ -121,13 +121,12 @@
                                     </div>
                                 </div>          
                             </div>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <div class="pull-right">
-                                                <a class="btn btn-primary" href="{{ route('Users.edit',he($users->id)) }}"> Edit Profile</a>
-                                            </div> 
-                                        </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="pull-right">
+                                            <a class="btn btn-primary" href="{{ route('Users.edit',he($users->id)) }}"> Edit Profile</a>
+                                        </div> 
                                     </div>
                                 </div>
                             </div>

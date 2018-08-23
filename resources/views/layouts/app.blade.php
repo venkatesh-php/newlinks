@@ -14,7 +14,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  
 
     <style>
  .navbar .transparent .navbar-inner {
@@ -32,6 +32,7 @@
 
     }
     body {
+        background-image:url({{url('background.jpg')}});
 
     }
     </style>
@@ -39,7 +40,7 @@
      window.onload = function() {
     document.addEventListener("contextmenu", function(e){
       e.preventDefault();
-    }, false);
+    }, false)};
 
     </script>
 
@@ -108,7 +109,7 @@
                             
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                <h4 style='color:white'>{{ Auth::user()->fullname }}</h4> 
+                                <h4 style='color:white'><b>{{ Auth::user()->fullname }}</b></h4> 
                                 
                                 </a>
 
@@ -130,7 +131,7 @@
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                                <h4 style='color:white'>Logout</h4>
+                                                <h4 style='color:white'><b>Logout</b></h4>
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -149,7 +150,6 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+   
 </body>
 </html>
