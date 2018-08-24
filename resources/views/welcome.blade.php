@@ -20,9 +20,9 @@
             </div>  
             <h3 style='color:white'>1.Registration Free</h3>
             <h3 style='color:white'>2.You'll visible to all Sutable Matches</h3>
-            <h3 style='color:white'>3.If you wanna see other matches,Need to make payment.</h3>
+            <h3 style='color:white'>3.Female's have full rights.</h3>
             <h3 style='color:white'>4.You'll get unlimited access of all matches.</h3>
-            <h3 style='color:white'>5.Unlimited Access Fee : 1000/-</h3>
+            <h3 style='color:white'>5.Male's need to pay Fee : 500/-</h3>
             <h3 style='color:white'>6.Account NO:20158838136, Jonnalagadda</h3>
             <h3 style='color:white'>7.IFSC Code : SBIN0001924.</h3>
             <h3 style='color:white'>8.Name : Venkateswarlu</h3>
@@ -66,7 +66,13 @@
                     @endforeach
                     
                 </div>
-            </div>      
+            </div>  
+
+            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                <div class="col-md-12">
+                    <h3 style='color:white'> WE CAN ADD NEW CONSULTANTS HERE </h3>      
+                </div>
+            </div>    
         </div>
     </div>
 </div>

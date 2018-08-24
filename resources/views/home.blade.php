@@ -1,16 +1,23 @@
 @extends('layouts.app')
 @section('content')
-<style>
-.td {
-       
-    font-family: "Times New Roman", Times, serif;
-   }
-</style>
-@if ($message = Session::get('alert'))
-    <div class="alert alert-danger">
-        <h2>{{ $message }}</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @if ($message = Session::get('alert'))
+                <div class="alert alert-danger">
+                    <h2>{{ $message }}</h2>
+                </div>
+            @endif
+        </div>
     </div>
-@endif
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+            <h4 style='color:black'> Sutable Matches: {{ $count }} </h4>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">

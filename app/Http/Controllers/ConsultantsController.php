@@ -19,7 +19,7 @@ class ConsultantsController extends Controller
      */
     public function index(Request $request)
     {
-        if(Auth::user()->payment == NULL)
+        if(Auth::user()->gender == 'male' && Auth::user()->payment == NULL)
         {
             return redirect()->back()->with('alert','Please make the payment to see Matches');
         }

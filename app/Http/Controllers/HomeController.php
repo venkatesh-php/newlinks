@@ -63,7 +63,15 @@ class HomeController extends Controller
         }
         
         // return $users;
-        return view('home',compact('users'));
+        if(Auth::user()->gender == 'male')
+        {
+            $count = User::orderBy('id','DESC')->where('caste',Auth::user()->caste)->where('gender','=','female')->count();
+        }
+        else
+        {
+            $count = User::orderBy('id','DESC')->where('caste',Auth::user()->caste)->where('gender','=','male')->count();
+        }
+        return view('home',compact('users','count'));
     }
 
     public function profileImage($name){
