@@ -18,7 +18,11 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        if(Auth::user()->id == 1)
+        {
+            $users = User::all();
+        }
+      
         return view('User.index',compact('users'));
     }
 
@@ -54,17 +58,19 @@ class UsersController extends Controller
         $profile = new User();
         $profile->user_id = $request->user_id;
         $profile->photo = storeFile($request->photo,'photo');
-// return $profile['photo'];
+        // return $profile['photo'];
+
+        if(isset(Auth::user()->photo)){   
+            Storage::disk('photo')->delete(Auth::user()->photo);
+        }
+
         DB::table('users')->where('id', $profile['user_id'])
         ->update(['photo' => $profile['photo']]);
 
-        if(isset($request->photo)){   
-            Storage::disk('photo')->delete($request->photo);
-        } 
-
-        // return redirect()->route('home')->with('success','Profile photo Uploded successfully');
-
-        // return $request->user_id;
+        // if(isset($request->photo)){   
+        //     Storage::disk('photo')->delete($request->photo);
+        // } 
+       
         if(Auth::user()->id == $request->user_id)
         {
             return redirect()->route('home')

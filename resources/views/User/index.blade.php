@@ -15,6 +15,8 @@
 
 <div class="container-fluid">
     <div class="row">
+    <div class="panel panel-primary">
+    <div class="panel-body">
         <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12">
             <div class="table-responsive">
                 <table class="table table-striped">
@@ -65,6 +67,8 @@
                 </table>
                 
             </div>
+        </div>
+        </div>
         </div>
     </div>
 </div>

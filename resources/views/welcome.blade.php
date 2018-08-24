@@ -34,26 +34,39 @@
         <div class="col-md-6">
             <div class="title">                        
                 <h2 style='color:white'><u>List of Consultant Persons </u></h2>
-            </div>  
+            </div> 
             <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                             
-                                <?php 
-                                use Illuminate\Http\Request;
-                                use App\Http\Requests;
-                                $consultants = DB::table("consultants")->get();
-                                $i =1;
-                                ?>
-                                
-                            <div class="col-md-12">
-                                  
-                                @foreach($consultants as $consultant)
-                                <h3 style='color:white'>{{$i++}} . {{$consultant->name}} : {{$consultant->phone_number}} {{$consultant->address}} </h3>
-                                @endforeach
-                                
-                            </div>
-                        </div>
-
-               
+                <?php 
+                use App\User;
+                $users = User::all()->count();
+                ?>
+                <div class="col-md-12">
+                    <h3 style='color:white'> Total Users So far : {{ $users}}  </h3>      
+                </div>
+            </div>
+            <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
+                            
+                <?php 
+                use Illuminate\Http\Request;
+                use App\Http\Requests;
+                $consultants = DB::table("consultants")->get();
+    
+                
+                $i =1;
+                ?>
+                
+                <div class="col-md-12">
+                        
+                    @foreach($consultants as $consultant)
+                    <?php 
+                    $users = User::where('consultant_id',$consultant->id)->count();
+                    ?>
+                    <h3 style='color:white'>{{$i++}} . {{$consultant->name}} : {{$consultant->phone_number}} {{$consultant->address}} (Matches : {{$users}})</h3>
+                    @endforeach
+                    
+                </div>
+            </div>      
         </div>
     </div>
 </div>
