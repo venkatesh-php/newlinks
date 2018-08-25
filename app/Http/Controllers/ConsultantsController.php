@@ -19,9 +19,9 @@ class ConsultantsController extends Controller
      */
     public function index(Request $request)
     {
-        if(Auth::user()->gender == 'male' && Auth::user()->payment == NULL)
+        if(Auth::user()->payment == NULL)
         {
-            return redirect()->back()->with('alert','Please make the payment to see Matches');
+            return redirect()->back()->with('alert','Please make the payment 1000/- to see Matches');
         }
         else{
 
@@ -30,6 +30,7 @@ class ConsultantsController extends Controller
         {
             $users = Users::orderBy('id','DESC')
             ->where('users.caste',Auth::user()->caste)
+            ->where('users.status',Null)
             ->where('users.gender','female') 
             ->paginate(1);
         }
@@ -37,6 +38,7 @@ class ConsultantsController extends Controller
         {
             $users = Users::orderBy('id','DESC')
             ->where('users.caste',Auth::user()->caste)
+            ->where('users.status',Null)
             ->where('users.gender','male') 
             ->paginate(1);
 

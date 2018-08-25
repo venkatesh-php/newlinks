@@ -18,7 +18,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->id == 1)
+        if(Auth::user()->id == 1 || Auth::user()->id == 2 )
         {
             $users = User::all();
         }
@@ -198,9 +198,13 @@ class UsersController extends Controller
      * @param  \App\Users  $users
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Users $users)
+    public function destroy($id)
     {
-        //
+        $id1 = hd($id);
+        $users = User::findOrFail($id1);
+        $users->delete();
+        return redirect()->route('Users.index');
+
     }
 
     public function getCasteList(Request $request)

@@ -20,13 +20,14 @@
             </div>  
             <h3 style='color:white'>1.Registration Free</h3>
             <h3 style='color:white'>2.You'll visible to all Sutable Matches</h3>
-            <h3 style='color:white'>3.Female's have full rights.</h3>
-            <h3 style='color:white'>4.You'll get unlimited access of all matches.</h3>
-            <h3 style='color:white'>5.Male's need to pay Fee : 1000/-</h3>
-            <h3 style='color:white'>6.Account NO:20158838136, Jonnalagadda</h3>
-            <h3 style='color:white'>7.IFSC Code : SBIN0001924.</h3>
-            <h3 style='color:white'>8.Name : Venkateswarlu</h3>
-            <h3 style='color:white'>9.WhatsApp NO : 9848041175</h3>
+            <h3 style='color:white'>3.If you wanna see other matches, need to pay.</h3>
+            <h3 style='color:white'>4.Unlimited Access Fee : 1000/-</h3>
+            <h3 style='color:white'>5.Account NO:20158838136, Jonnalagadda</h3>
+            <h3 style='color:white'>6.IFSC Code : SBIN0001924.</h3>
+            <h3 style='color:white'>7.Name : Venkateswarlu</h3>
+            <h3 style='color:white'>8.WhatsApp NO : 9848041175</h3>
+            <h3 style='color:white'>9.Send us Payment ID (or) Screen Shot and Your ID, We'll activate with in 10 minutes</h3>
+            
 
                
         </div>
@@ -42,7 +43,7 @@
                 $users = User::all()->count();
                 ?>
                 <div class="col-md-12">
-                    <h3 style='color:white'> Total Users So far : {{ $users}}  </h3>      
+                    <h3 style='color:white'> Total Users : {{ $users}}  </h3>      
                 </div>
             </div>
             <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
@@ -60,9 +61,9 @@
                         
                     @foreach($consultants as $consultant)
                     <?php 
-                    $users = User::where('consultant_id',$consultant->id)->count();
+                    $users = User::where('consultant_id',$consultant->id)->where('status',Null)->count();
                     ?>
-                    <h3 style='color:white'>{{$i++}} . {{$consultant->name}} : {{$consultant->phone_number}} {{$consultant->address}} (Matches : {{$users}})</h3>
+                    <h3 style='color:white'>{{$i++}} . {{$consultant->name}} : {{$consultant->phone_number}} {{$consultant->address}} (Active Matches : {{$users}})</h3>
                     @endforeach
                     
                 </div>

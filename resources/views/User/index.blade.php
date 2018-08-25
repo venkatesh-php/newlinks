@@ -56,10 +56,11 @@
                 
                             <a class="btn btn-primary btn-xs" href="{{ route('Users.edit',he($task->id)) }}">Edit</a>
                             <a class="btn btn-success btn-xs" href="{{ route('Users.show',he($task->id)) }}">Show</a>
+                            <!-- <a class="btn btn-danger btn-xs" href="{{ route('Users.destroy',he($task->id)) }}">Delete</a> -->
 
-                            {{--  {!! Form::open(['method' => 'DELETE','route' => ['AdminTasks.destroy', $task->id],'style'=>'display:inline']) !!}
+                             {!! Form::open(['method' => 'DELETE','route' => ['Users.destroy', he($task->id)],'style'=>'display:inline']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!} 
-                            {!! Form::close() !!}  --}}
+                            {!! Form::close() !!}  
                         </td>
                        
                     </tr>

@@ -162,7 +162,7 @@
             {!! Form::text('permanent_address', null, array('placeholder' => 'Enter Permanant Address','class' => 'form-control')) !!}
         </div>
     </div>
-    @if(Auth::user()->id == 1)
+    @if(Auth::user()->id == 1 || Auth::user()->id == 2)
     <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
             <strong>Marraige Status:</strong>

@@ -82,15 +82,16 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                         @if(Auth::check())
-                        @if(Auth::user()->id == 1 && Auth::user()->gender == 'male')
+                        @if(Auth::user()->id == 1 || Auth::user()->id == 2  )
                         <li><a href="{{ route('Users.index') }}"><h4 style='color:white'><b>All Users</b></h4></a></li>
+                        <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Bride Matches</b></h4></a></li>
                         
                         @else
                             @if(Auth::user()->gender == 'male')
-                            <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Bride Matches</b></h4></a></li>
+                            <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Brides</b></h4></a></li>
                            
                             @else
-                            <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Groom Matches</b></h4></a></li>
+                            <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Grooms</b></h4></a></li>
                             
                             @endif
                         @endif
