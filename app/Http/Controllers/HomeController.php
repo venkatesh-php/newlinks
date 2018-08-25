@@ -65,11 +65,15 @@ class HomeController extends Controller
         // return $users;
         if(Auth::user()->gender == 'male')
         {
-            $count = User::orderBy('id','DESC')->where('caste',Auth::user()->caste)->where('gender','=','female')->count();
+            $count = User::orderBy('id','DESC')->where('caste',Auth::user()->caste)
+            ->where('gender','=','female')
+            ->where('status',Null)->count();
         }
         else
         {
-            $count = User::orderBy('id','DESC')->where('caste',Auth::user()->caste)->where('gender','=','male')->count();
+            $count = User::orderBy('id','DESC')->where('caste',Auth::user()->caste)
+            ->where('gender','=','male')
+            ->where('status',Null)->count();
         }
         return view('home',compact('users','count'));
     }
