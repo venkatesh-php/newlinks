@@ -216,4 +216,11 @@ class UsersController extends Controller
         return $caste;
         
     }
+
+    public function profileImage($name){
+        $photo = Storage::disk('photo')->get($name);
+        $response = Response::make($photo, 200);
+        $response->header('Content-Type', 'image/png/jpg/jpeg/bmp');
+        return $response;
+    }
 }
