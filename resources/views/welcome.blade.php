@@ -26,7 +26,10 @@
             <h3 style='color:white'>6.IFSC Code : SBIN0001924.</h3>
             <h3 style='color:white'>7.Name : Venkateswarlu</h3>
             <h3 style='color:white'>8.Admin WhatsApp NO : 9848041175</h3>
-            <h3 style='color:white'>9.Send us Payment ID (or) Screen Shot and Your ID, We'll activate with in 10 minutes</h3>
+            <h3 style='color:white'>9.Admin Email : admin@sivalinks.xyz</h3>
+            <h3 style='color:white'>10.New Members send your details,we'll update.</h3>
+            <h3 style='color:white'>11.Details will be secure.They can't contact you.They can contact only Consultant Person.</h3>
+            <h3 style='color:white'>12.Send us Payment ID (or) Screen Shot and Your ID, We'll activate with in 10 minutes</h3>
             
 
                
