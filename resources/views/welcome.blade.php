@@ -14,7 +14,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="title">                        
                 <h2 style='color:white'><u>Registration Instructions </u></h2>
             </div>  
@@ -35,14 +35,35 @@
                
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
+            <div class="title">                        
+                <h2 style='color:white'><u>We can Accept Paytm also </u></h2>
+            </div> 
+            <div class="row">
+                            <div class="col-md-2">
+                                <img src="sivalinks.jpg" alt="" class="img-rounded" height="450" width="350">
+                            </div>
+                        
+                           
+                        </div>
+                
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
             <div class="title">                        
                 <h2 style='color:white'><u>List of Consultant Persons </u></h2>
             </div> 
             <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                             
                 <?php 
-                use App\User;
+               use App\User;
                 $users = User::all()->count();
                 ?>
                
@@ -67,11 +88,11 @@
                         $users = User::where('consultant_id',$consultant->id)->where('status',Null)->count();
                         ?>
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <img src="{{route('profileImage',['name'=>$consultant->profile_pic])}}" alt="" class="img-circle" height="150" width="150">
                             </div>
                         
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <h3 style='color:white'>{{$consultant->name}} : {{$consultant->phone_number}} {{$consultant->address}} (Active Matches : {{$users}})</h3>
                             </div>
                         </div>

@@ -57,6 +57,7 @@ class UsersController extends Controller
         // return $request->photo;
         $profile = new User();
         $profile->user_id = $request->user_id;
+        // $photo = $request->photo->resize(320, 240);
         $profile->photo = storeFile($request->photo,'photo');
         // return $profile['photo'];
 
