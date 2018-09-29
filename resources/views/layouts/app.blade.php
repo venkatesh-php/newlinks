@@ -4,30 +4,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SivaLinks Matrimonial Consultancy Services">
+    <meta name="keywords" content="sivalinks,Matrimonial,Consultancy,Services">
+    <meta name="author" content="Sivalinks,venkateswarlu">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>SivaLinks</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122458766-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122458766-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-122458766-2');
-</script>
+    gtag('config', 'UA-122458766-2');
+    </script>
 
 
     <!-- Styles -->
   
 
     <style>
- .navbar .transparent .navbar-inner {
+    .navbar .transparent .navbar-inner {
     border-width: 0px;
     -webkit-box-shadow: 0px 0px;
     box-shadow: 0px 0px;
@@ -42,7 +45,7 @@
 
     }
     body {
-        background-image:url({{url('background.jpg')}});
+        background-image:url({{url('background1.jpg')}});
 
     }
     </style>
@@ -94,7 +97,7 @@
                         @if(Auth::check())
                         @if(Auth::user()->id == 1 || Auth::user()->id == 2  )
                         <li><a href="{{ route('Users.index') }}"><h4 style='color:white'><b>All Users</b></h4></a></li>
-                        <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Bride Matches</b></h4></a></li>
+                        <li><a href="{{ route('Consultants.index') }}"><h4 style='color:white'><b>Brides</b></h4></a></li>
                         
                         @else
                             @if(Auth::user()->gender == 'male')

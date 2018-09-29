@@ -40,12 +40,10 @@
                 <h2 style='color:white'><u>We can Accept Paytm also </u></h2>
             </div> 
             <div class="row">
-                            <div class="col-md-2">
-                                <img src="sivalinks.jpg" alt="" class="img-rounded" height="450" width="350">
-                            </div>
-                        
-                           
-                        </div>
+                <div class="col-md-2">
+                    <img src="sivalinks.jpg" alt="" class="img-rounded" height="450" width="350">
+                </div>
+            </div>
                 
         </div>
     </div>

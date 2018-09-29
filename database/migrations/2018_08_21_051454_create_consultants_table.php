@@ -18,6 +18,7 @@ class CreateConsultantsTable extends Migration
             $table->string('name');
             $table->string('phone_number');
             $table->string('address');
+            $table->string('profile_pic');
             $table->timestamps();
         });
     }
